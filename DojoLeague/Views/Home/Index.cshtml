@@ -1,0 +1,111 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo League - Ninjas</title>
+    <style>
+    body {
+        height: 600px;
+        width:100%
+        text-align:center;
+    }
+    .left {
+        vertical-align: top;
+        height: 500px;
+        width:40%;
+        display:inline-block;
+        margin:auto;
+        text-align:center;
+        /* border-right:4px solid black; */
+    }
+    .right {
+        
+        width:40%;
+        display:inline-block;
+        margin:auto;
+        text-align:center;
+    }
+    td {
+        width:200px;
+        border:1px solid black;
+    }
+    </style>
+</head>
+<body>
+        <div class="left">
+            <h1>Registered Ninjas</h1>
+            <table>
+                <tr>
+                    <td>Ninja Name</td>
+                    <td>Home Dojo</td>
+                </tr>
+                @foreach (var ninja in @ViewBag.Ninjas)
+                {
+                    <tr>
+                        <td>@ninja.name</td>
+                    
+                        @foreach(var dojo in @ViewBag.Dojos)
+                        {
+                            if(ninja.dojos_id == dojo.id)
+                            {
+                                <td>@dojo.name</td>
+                            }
+                            
+                        }
+                        
+                    </tr>
+
+                }    
+            </table>
+        </div>
+        <div class="right">
+            <h1> Register a Ninja</h1>
+            <form action="/createNinja" method="post">
+                <label>Ninja Name:</label>
+                <br>
+                <input type="text" name="name">
+                <br><br>
+                <label>Ninja Level:(1-10)</label>
+                <br>
+                <select name="level">
+                    <option></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <br><br>
+                <label> Assigned Dojo? </label>
+                <select name="dojos_id">
+                    <option value = "0">Rogue</option>
+                    @foreach (var dojo in @ViewBag.Dojos)
+                    {
+                    <option value="@dojo.id">@dojo.name</option>
+                    }
+                </select>
+                <br><br>
+                <label>Optional Description</label>
+                <br>
+                <textarea name="description"></textarea>
+                <br><br>
+                <input type="submit">
+            </form>
+            <br>
+            <br>
+            <a href="/dojos">Dojos Page</a>
+        </div>
+</body>
+</html>

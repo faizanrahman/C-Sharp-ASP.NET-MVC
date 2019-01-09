@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Razor Fun</title>
+    </head>
+    <body>
+        <h1>
+            Welcome to Razor Fun
+        </h1>
+
+        @{
+            string[] stringArray = new string[] {"Apple","Banana","Cherries","Cantaloupe","Pears","Chikoo"};
+
+            for (int idx = 0; idx < stringArray.Length; idx++)
+                {   
+                    if(stringArray[idx][0] == 'C')
+                    {
+                        <p style = "color:red;">@stringArray[idx]</p>
+                    }
+                    else
+                    {
+                    <p>@stringArray[idx]</p>;
+                    }
+                }
+
+
+
+         }
+    </body>
+</html>

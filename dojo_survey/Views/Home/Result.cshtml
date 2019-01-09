@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Result</title>
+    <style>
+    #wrapper {
+        margin:20px auto;
+        padding:50px;
+    }
+    table {
+        width:500px;
+        border:3px solid black;
+    }
+    td {
+        border:1px solid black;
+    }
+    button{
+            width:150px;
+            height:40px;
+            background-color: black;
+            color:white;
+            font-weight:bold;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+    <div id="result">
+    <h1>The form was submitted successfully</h1>
+    <h2>Submitted Info</h2>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>@ViewBag.name</td>
+        </tr>
+        <tr>
+                <td>Email:</td>
+                <td>@ViewBag.email</td>
+            </tr>
+        <tr>
+            <td>Dojo Location:</td>
+            <td>@ViewBag.location</td>
+        </tr>
+        <tr>
+            <td>Favorite Language:</td>
+            <td>@ViewBag.language</td>
+        </tr>
+        <tr>
+            <td>Comments:</td>
+            <td>@ViewBag.comments</td>
+        </tr>
+        
+    </table>
+    <br><br><br><br><br>
+    <a href="/"><button>Go back</button></a>
+</div>
+</div>
+</body>
+</html>

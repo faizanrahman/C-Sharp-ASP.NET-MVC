@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo League - Dojos</title>
+    <style>
+    td {
+        border:1px solid black;
+        width:200px;
+        text-align:center;
+    }
+    </style>
+</head>
+<body>
+    <form action="/createDojo" method="post">
+       <h1>All Dojos</h1>
+       <table>
+                <tr>
+                    <td>Dojo Name</td>
+                </tr>
+                @foreach (var dojo in @ViewBag.Dojos)
+                {
+                    <tr>
+                        <td><a href="/dojos/@dojo.id">@dojo.name</a></td>
+                    </tr>
+                }    
+            </table>
+       
+       
+
+
+
+
+       
+       
+       
+       
+       
+       <h1>Create a Dojo</h1>
+       Name: <input type="text" name="name">
+       Location: <input type="text" name="location">
+       Description: <input type="text" name="description">
+       <input type="submit" value="Create Dojo">
+    </form>
+</body>
+</html>

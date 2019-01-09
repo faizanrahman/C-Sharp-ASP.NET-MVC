@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Random Word</title>
+    <style>
+        body {
+            text-align:center;
+            padding:100px;
+            margin:auto;
+            width:100%;
+        }
+        div {
+            border:2px solid black;
+            width:50%;
+            margin-left:250px;
+        }
+        input[type='submit'] {
+            width: 200px;
+            height:50px;
+            margin-top:20px;
+            border-radius:5px;
+            background-color: black;
+            color:white;
+            font-weight:bold;
+
+        }
+    
+    </style>
+</head>
+<body>
+        
+        <h1>Random Word Generator</h1>
+        <p>Attempt # @ViewBag.count</p>
+        <div>
+            <h2>@ViewBag.random</h2>
+        </div>
+        <form action='/random_word' method='get'>
+        <input type = 'submit' value = 'Generate'>
+        
+        </form>
+        <form action='/random_word/reset' method='get'>
+        <input type = 'submit' value = 'Reset'>
+        
+        </form>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+        //$.ajax({
+        //    url:"/random_word",
+        //    success:function(data) {
+        //        console.log(data);
+        //    },
+        //}); 
+
+        //$.ajax({
+        //   url:"/random_word/reset",
+        //    success:function(data) {
+        //        console.log("Reset button clicked");
+        //    },
+        //}); 
+    </script>
+</body>
+</html>

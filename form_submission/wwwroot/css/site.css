@@ -1,0 +1,9 @@
+/*Write all of your CSS here*/
+
+input {
+    display:block;
+    width:500px;
+}
+span {
+    color:red;
+}
